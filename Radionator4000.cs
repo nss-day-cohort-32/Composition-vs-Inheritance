@@ -2,19 +2,21 @@ using System.Collections.Generic;
 
 namespace ClassyElectronics
 {
-    public class Radionator4000 : Speakanator3000
+    public class Radionator4000
     {
-        public double CurrentFrequency { get; set; }
-        public List<double> FavoriteStations { get; set; }
+        public ITurntable Turntable { get; set; }
+        public ISpeaker Speaker { get; set; }
+        public IRadio Radio { get; set; }
 
-        public void AddFavorite()
+        public Radionator4000(
+            ITurntable turntable,
+            ISpeaker speaker,
+            IRadio radio
+        )
         {
-            FavoriteStations.Add(CurrentFrequency);
-        }
-
-        public void RemoveFavorite(double station)
-        {
-            FavoriteStations.Remove(station);
+            Turntable = turntable;
+            Speaker = speaker;
+            Radio = radio;
         }
     }
 }

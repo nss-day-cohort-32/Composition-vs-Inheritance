@@ -1,17 +1,14 @@
 namespace ClassyElectronics
 {
-    public class Speakanator3000 : Turntable
+    public class Speakanator3000
     {
-        public int Volume { get; set; }
+        public ITurntable TurnTable { get; set; }
+        public ISpeaker Speaker { get; set; }
 
-        public void VolumeUp()
+        public Speakanator3000(ITurntable turnTable, ISpeaker speaker)
         {
-            Volume += 1;
-        }
-
-        public void VolumeDown()
-        {
-            Volume -= 1;
+            TurnTable = turnTable;
+            Speaker = speaker;
         }
     }
 }

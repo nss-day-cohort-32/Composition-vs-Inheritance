@@ -1,6 +1,6 @@
 namespace ClassyElectronics
 {
-    public class Turntable
+    public class BasicTurntable : ITurntable
     {
         public double CurrentSpeed { get; set; }
         public bool IsPlaying { get; set; }

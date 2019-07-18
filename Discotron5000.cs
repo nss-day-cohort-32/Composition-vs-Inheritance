@@ -1,18 +1,23 @@
 namespace ClassyElectronics
 {
-    public class Discotron5000 : Radionator4000
+    public class Discotron5000
     {
-        public int TotalTracks { get; set; }
-        public int CurrentTrack { get; set; }
+        public ITurntable Turntable { get; set; }
+        public ISpeaker Speaker { get; set; }
+        public IRadio Radio { get; set; }
+        public ICDPlayer CdPlayer { get; set; }
 
-        public void NextTrack()
+        public Discotron5000(
+            ITurntable turntable,
+            ISpeaker speaker,
+            IRadio radio,
+            ICDPlayer cdPlayer
+        )
         {
-            CurrentTrack += 1;
-        }
-
-        public void PreviousTrack()
-        {
-            CurrentTrack -= 1;
+            Turntable = turntable;
+            Speaker = speaker;
+            Radio = radio;
+            CdPlayer = cdPlayer;
         }
     }
 }
